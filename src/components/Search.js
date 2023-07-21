@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import switchArrows from "./icon.png";
+import swap from "./swap.png";
+import "../styles/App.css";
+import { useDispatch } from "react-redux";
+import { getSearchList } from "../Redux/BusSlice";
 
 export const Search = () => {
+  const dispatch = useDispatch();
   const [from, setFrom] = useState("");
   const [destination, setDestination] = useState("");
   const [date, setDate] = useState("");
-  const [isForward, setIsForward] = useState(true);
 
   const handleFrom = (e) => {
     setFrom(e.target.value);
@@ -20,51 +22,62 @@ export const Search = () => {
     setDate(e.target.value);
   };
 
-  const toggleIcon = () => {
-    setIsForward(!isForward);
-  };
-
+  const swapDestinations = () =>{
+    const temp = from;
+    setFrom(destination);
+    setDestination(temp);
+  }
   return (
     <div>
-      <label>FROM</label>
-      <input
-        name="from"
-        type="text"
-        placeholder="Source"
-        value={from}
-        onChange={handleFrom}
-      />
-      <img src={switchArrows} alt="arrow" width={30} height={30}></img>
+      <div style={{ textAlign: "center", margin: "50px" }}>
+        <label className="labels">FROM</label>
+        <input
+          name="from"
+          type="text"
+          placeholder="Source"
+          value={from}
+          onChange={handleFrom}
+          className="fields"
+        />
+        <span style={{ position: "absolute", top: "57px" }} onClick={swapDestinations}>
+          <img src={swap} alt="arrow" width={30} height={30}></img>
+        </span>
 
-      <label>TO</label>
+        <label className="labels" style={{ marginLeft: "40px" }}>
+          TO
+        </label>
 
-      <input
-        name="destination"
-        type="text"
-        placeholder="Destination"
-        value={destination}
-        onChange={handleDestination}
-      />
-      <label>DATE</label>
+        <input
+          name="destination"
+          type="text"
+          placeholder="Destination"
+          value={destination}
+          onChange={handleDestination}
+          className="fields"
+        />
+        <label className="labels">DATE</label>
 
-      <input
-        name="date"
-        type="date"
-        placeholder="Date"
-        value={date}
-        onChange={handleDate}
-      />
-      <button
-        style={{
-          background: "#d41111",
-          color: "white",
-          border: "none",
-          fontSize: "1rem",
-          padding: "4px 4px",
-        }}
-      >
-        SEARCH BUSES
-      </button>
+        <input
+          name="date"
+          type="date"
+          placeholder="Date"
+          value={date}
+          onChange={handleDate}
+          className="fields"
+        />
+        <button
+          style={{
+            background: "#d41111",
+            color: "white",
+            border: "none",
+            fontSize: "1rem",
+            padding: "4px 4px",
+          }}
+          onClick={() => dispatch(getSearchList({ from, destination }))}
+        >
+          SEARCH BUSES
+        </button>
+      </div>
     </div>
   );
 };

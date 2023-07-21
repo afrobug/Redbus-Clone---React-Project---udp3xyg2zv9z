@@ -7,20 +7,22 @@ export const BusCard = ({
   ticketPrice,
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        background: "lightblue",
-        padding: "5px",
-        margin: "10px",
-      }}
-    >
-      <div>{busName}</div>
-      <div>{arrivalTime}</div>
-      <div>{departureTime}</div>
-      <div>Rating:{ticketPrice / 10}</div>
-      <div>{ticketPrice}</div>
+    <div style={{ background: "white" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          padding: "5px",
+          margin: "10px",
+          fontSize: "20px",
+        }}
+      >
+        <div>{busName}</div>
+        <div>{arrivalTime}</div>
+        <div>{departureTime}</div>
+        <div>Rating:{ticketPrice / 10}</div>
+        <div>{ticketPrice}</div>
+      </div>
     </div>
   );
 };

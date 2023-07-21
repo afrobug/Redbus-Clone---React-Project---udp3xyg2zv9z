@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Sedgwick+Ave+Display&family=Shadows+Into+Light&family=Ubuntu&display=swap");
+
+body {
+  font-family: "Dosis", sans-serif;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-family: "Shadows Into Light", cursive;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.labels {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.fields{
+    width: 200px;
+    height: 30px;
+    margin: 5px;
+}
+
+.swap-img{
+    
+}
