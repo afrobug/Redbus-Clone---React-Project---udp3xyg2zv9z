@@ -3,6 +3,7 @@ import swap from "./swap.png";
 import "../styles/App.css";
 import { useDispatch } from "react-redux";
 import { getSearchList } from "../Redux/BusSlice";
+import Mui from "../Pages/mui.js";
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -22,14 +23,25 @@ export const Search = () => {
     setDate(e.target.value);
   };
 
-  const swapDestinations = () =>{
+  const swapDestinations = () => {
     const temp = from;
     setFrom(destination);
     setDestination(temp);
-  }
+  };
   return (
     <div>
-      <div style={{ textAlign: "center", margin: "50px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          margin: "50px",
+          backgroundColor: "whitesmoke",
+          display: "flex",
+          width: "1100px",
+          height:"100px",
+          alignItems: "center",
+          marginLeft: "250px",
+        }}
+      >
         <label className="labels">FROM</label>
         <input
           name="from"
@@ -39,11 +51,16 @@ export const Search = () => {
           onChange={handleFrom}
           className="fields"
         />
-        <span style={{ position: "absolute", top: "57px" }} onClick={swapDestinations}>
-          <img src={swap} alt="arrow" width={30} height={30}></img>
+        <span
+        
+          onClick={swapDestinations}
+        >
+          <a class="clickable-image">
+            <img src={swap} alt="arrow" width={30} height={30}></img>
+          </a>
         </span>
 
-        <label className="labels" style={{ marginLeft: "40px" }}>
+        <label className="labels" style={{ marginLeft: "20px" }}>
           TO
         </label>
 
@@ -66,17 +83,12 @@ export const Search = () => {
           className="fields"
         />
         <button
-          style={{
-            background: "#d41111",
-            color: "white",
-            border: "none",
-            fontSize: "1rem",
-            padding: "4px 4px",
-          }}
+          className="searchButton"
           onClick={() => dispatch(getSearchList({ from, destination }))}
         >
           SEARCH BUSES
         </button>
+        {/* <Mui /> */}
       </div>
     </div>
   );

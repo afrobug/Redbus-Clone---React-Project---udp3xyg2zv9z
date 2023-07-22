@@ -12,12 +12,56 @@ body {
   margin: 10px;
 }
 
-.fields{
-    width: 200px;
-    height: 30px;
-    margin: 5px;
+.fields {
+  width: 200px;
+  height: 30px;
+  margin: 5px;
 }
 
-.swap-img{
-    
+.horizontal-sort-by {
+  background-color: white;
+  width: 1000px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.sortBy {
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sortByLabels {
+  font-size: 20px;
+  margin: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+.clickable-image img {
+  margin-left: 20px;
+  transition: transform 0.3s;
+}
+
+.clickable-image:hover img {
+  transform: rotateY(180deg);
+}
+
+.searchButton {
+  padding: 10px;
+  border: none;
+  margin-left: 10px;
+  font-size: 15px;
+  background-color: hsl(0, 100%, 56%);
+  color: white;
+  border-radius: 5px;
+  transition: box-shadow 0.3s;
+}
+
+.searchButton:hover {
+  box-shadow: 5px 5px 5px rgba(186, 77, 77, 0.5);
 }

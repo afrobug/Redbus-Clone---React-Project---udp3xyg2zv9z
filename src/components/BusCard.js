@@ -14,10 +14,10 @@ export const BusCard = ({
           justifyContent: "space-between",
           padding: "5px",
           margin: "10px",
-          fontSize: "20px",
+          fontSize: "30px",
         }}
       >
-        <div>{busName}</div>
+        <div style={{width:"200px"}}>{busName}</div>
         <div>{arrivalTime}</div>
         <div>{departureTime}</div>
         <div>Rating:{ticketPrice / 10}</div>
