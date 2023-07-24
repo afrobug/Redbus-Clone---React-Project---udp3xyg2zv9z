@@ -1,20 +1,6 @@
-# boilerplate-react-functional-public
+Redbus 
+![redbus](https://github.com/afrobug/Redbus-Clone---React-Project---udp3xyg2zv9z/assets/35890805/89ddfd2e-cb34-4fcd-924e-eb6ca51d5233)
 
-In this app we will be making a Word and Character counter app.
-First there needs to be a <code>textarea</code> element which will take the input
-from user.
+RedBus is India’s largest online bus ticketing platform that has transformed bus travel in the country by bringing ease and convenience to millions of Indians who travel using buses.
 
-Below that element, create 2 divs with id="word-counter" and id="char-counter" respectively.
-#word-counter will show the number of words(empty space is not considered a word) and #char-counter will show the number of characters typed.
-
-Also make an input with id="char-limit-input" which takes a number which is the limit of characters we can type in.
-By default char limit should be 50.
-
-And the last input should be a slider input(with id ="fontSize-input") for taking the font size, default and min value should be 16px and max would be 32px.
-
-Apply the fontSize property to the textarea element.
-
-
-
-Demo video:-
-<video src="https://d3dyfaf3iutrxo.cloudfront.net/general/upload/e449406acecb4a1186ae9cc77a55933f.mp4" controls autoplay muted>
+In this project we tried to make perfect clone of redbus.We had builded up all our efforts to do best in this project.At redbus users can book buses,tempo and car according to their requirements.
