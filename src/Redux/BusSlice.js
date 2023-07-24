@@ -26,6 +26,21 @@ export const busSlice = createSlice({
   name: "bus",
   initialState,
   reducers: {
+    sortByPrice: (state, action) => {
+      state.busData = state.busData.sort(
+        (a, b) => b.ticketPrice - a.ticketPrice
+      );
+    },
+    sortByArrival: (state, action) => {
+      state.busData = state.busData.sort(
+        (a, b) => b.arrivalTime[0] - a.arrivalTime[0]
+      );
+    },
+    sortByDeparture: (state, action) => {
+      state.busData = state.busData.sort(
+        (a, b) => b.departureTime[0] - a.departureTime[0]
+      );
+    },
   },
   extraReducers: {
     [getBusList.fulfilled]: (state, { payload }) => {
@@ -37,6 +52,6 @@ export const busSlice = createSlice({
   },
 });
 
-export const {  } = busSlice.actions;
+export const { sortByPrice,sortByArrival,sortByDeparture } = busSlice.actions;
 
 export default busSlice.reducer;

@@ -15,13 +15,14 @@ export const BusCard = ({
           padding: "5px",
           margin: "10px",
           fontSize: "30px",
+          fontWeight:"600"
         }}
       >
         <div style={{width:"200px"}}>{busName}</div>
         <div>{arrivalTime}</div>
         <div>{departureTime}</div>
-        <div>Rating:{ticketPrice / 10}</div>
-        <div>{ticketPrice}</div>
+        <div style={{background:"#26d45c"}}>Rating:{ticketPrice / 100}/10</div>
+        <div>{ticketPrice}/-</div>
       </div>
     </div>
   );

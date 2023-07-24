@@ -10,6 +10,7 @@ body {
 .labels {
   font-size: 20px;
   margin: 10px;
+  font-weight: 600;
 }
 
 .fields {
