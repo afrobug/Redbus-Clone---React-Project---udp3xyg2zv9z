@@ -1,0 +1,54 @@
+.signup {
+    color: white;
+    /* background-color: rgb(242, 145, 145); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: 35%;
+    margin-left: 35%;
+    height: 100vh;
+    box-sizing: border-box; /* Add this to include padding and border in the width calculation */
+  }
+  
+  
+  .signupInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    background-color: #1976d2;
+    padding: 30px;
+    width: 100%;
+    height: 70%; /* Add this to take full available width */
+    box-sizing: border-box; /* Add this to include padding and border in the width calculation */
+  }
+  .signup button {
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 30%;
+    width: 40%;
+    border-radius: 20px;
+    background-color: rgb(253, 67, 67);
+  }
+  
+  
+  .signupInputs img {
+    width: 100px;
+    margin: 0 auto; 
+    
+  }
+  .signupInputs h2 {
+    margin-top: -30px;
+    font-size: 40px;
+  }
+  
+  .signupInputs input {
+    height: 30px;
+    font-size: 18px;
+    width: 100%; /* Add this to take full available width */
+    box-sizing: border-box; /* Add this to include padding and border in the width calculation */
+  }

@@ -15,6 +15,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import Navbar from "../components/navbar";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ export const Home = () => {
   };
   return (
     <div>
+      <Navbar />
       <Search />
 
       <div style={{ background: "red", padding: "10px 100px" }}>
