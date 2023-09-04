@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const BusCard = ({
   busName,
@@ -6,6 +7,10 @@ export const BusCard = ({
   departureTime,
   ticketPrice,
 }) => {
+  const navigate = useNavigate();
+  const handleBookNow = ()=>{
+    navigate("/booking")
+  }
   return (
     <div style={{ background: "white" }}>
       <div
@@ -23,6 +28,7 @@ export const BusCard = ({
         <div>{departureTime}</div>
         <div style={{background:"#26d45c"}}>Rating:{ticketPrice / 100}/10</div>
         <div>{ticketPrice}/-</div>
+        <button onClick={handleBookNow}>Book now</button>
       </div>
     </div>
   );

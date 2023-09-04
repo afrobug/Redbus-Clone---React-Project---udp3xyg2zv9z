@@ -10,12 +10,13 @@ import {
   sortByPrice,
 } from "../Redux/BusSlice";
 import "../styles/App.css";
-import { Button } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
+// import { Button } from "@mui/material";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { LocalizationProvider } from "@mui/x-date-pickers";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+// import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+// import Navbar from "../components/navbar";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -61,7 +62,8 @@ export const Home = () => {
               arrivalTime={detail.arrivalTime}
               departureTime={detail.departureTime}
               ticketPrice={detail.ticketPrice}
-            />
+              />
+              
           );
         })}
       </div>

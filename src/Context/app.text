@@ -1,0 +1,38 @@
+to be put inside app.js for global login
+
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Login } from "./Pages/Login";
+import { Home } from "./Pages/Home";
+import BookMySeat from "./Pages/BookMySeat";
+import Signin from "./Pages/Signin";
+import { useStateValue } from './Context/StateProvider';
+import { auth } from "./Firebase";
+
+
+const App = () => {
+  const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: 'SET_USER',
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: 'SET_USER',
+          user: null,
+        });
+      }
+    });
+  }, [dispatch]);
+  
+  return (
+    <div>
+      {<Home />}
+    </div>
+  );
+  }
+export default App;

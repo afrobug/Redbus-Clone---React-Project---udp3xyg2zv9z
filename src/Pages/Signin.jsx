@@ -1,27 +1,28 @@
 // import React, { useEffect, useState } from "react";
 // import { auth, provider } from "../Firebase";
-// import { signInWithPopup } from "firebase/auth";
 // import { Home } from "./Home";
+// import { signInWithPopup } from "@firebase/auth";
+// import { useNavigate } from "react-router-dom";
 
 // function Signin() {
-//   const [value, setValue] = useState("");
-//   const handleClick = () => {
-//     signInWithPopup(auth, provider).then((data) => {
-//       setValue(data.user.email);
-//       localStorage.setItem("email", data.user.email);
-//     });
+//   const navigate = useNavigate();
+
+//   const signInWithGoogle = () => {
+//     auth
+//       .signInWithPopup(provider)
+//       .then((res) => {
+//         if (res) {
+//           navigate("/home");
+//         }
+//       })
+//       .catch((err) => alert(err.message));
 //   };
 
-//   useEffect(() => {
-//     setValue(localStorage.getItem("email"));
-//   });
 //   return (
 //     <div>
-//       {value ? (
-//         <Home />
-//       ) : (
-//         <button onClick={handleClick}>signin with Google</button>
-//       )}
+//       <button onClick={signInWithGoogle} className="login__googleBtn">
+//         <span>Sign in with Google</span>
+//       </button>
 //     </div>
 //   );
 // }

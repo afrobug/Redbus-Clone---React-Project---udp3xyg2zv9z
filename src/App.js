@@ -1,31 +1,23 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./Pages/Login";
 import { Home } from "./Pages/Home";
 import BookMySeat from "./Pages/BookMySeat";
 import SignIn from "./Pages/Signin";
+import { LandingPage } from "./Pages/LandingPage";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/signin",
-    element: <SignIn />,
-  },
-  {
-    path: "/booking",
-    element: <BookMySeat />,
-  },
-]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
-};
+  return (
+  <BrowserRouter >
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/booking" element={<BookMySeat />} />
+      <Route path="/landing" element={<LandingPage />} />
+    </Routes>
+  </BrowserRouter>)
+  };
 
 export default App;

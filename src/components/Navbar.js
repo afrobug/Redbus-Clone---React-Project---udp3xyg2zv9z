@@ -19,19 +19,22 @@ export default function Navbar() {
   //   const [auth, setAuth] = useState(false);
   const auth = localStorage.getItem("auth");
   const [anchorEl, setAnchorEl] = useState(null);
+  const isLoggedIn = localStorage.getItem("auth");
+  const username = localStorage.getItem("Username") || " ";
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const loginHandler = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   const logoutHandler = () => {
     localStorage.removeItem("auth");
     localStorage.removeItem("Username");
     localStorage.removeItem("password");
+    localStorage.removeItem("Email");
     navigate("/");
   };
 
@@ -46,12 +49,16 @@ export default function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            {/* <MenuIcon /> */}
             <img src={fav} style={{width:"50px",height:"40px"}}></img>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             
           </Typography>
+          {isLoggedIn && (
+          <Typography variant="h6" >
+              Welcome {username}
+            </Typography>
+          )}
           {auth ? (
             <div>
               <IconButton
